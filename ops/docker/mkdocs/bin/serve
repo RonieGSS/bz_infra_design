@@ -1,0 +1,30 @@
+#! /bin/bash
+cd `dirname $0`/../../../../
+projectPath=$(git rev-parse --show-toplevel) 
+
+# remove mkdocs container if it exists
+container_name="biz_mkdocs"
+if docker ps -aq -f name=$container_name;
+then
+	echo "Stopping mkdocs container..."
+	docker stop $container_name
+	echo "Deleting mkdocs container..."
+	docker rm $container_name
+fi
+
+# build docker image first
+docker build -t hxhroniegss/mkdocs -f ./ops/docker/mkdocs/development/Dockerfile .
+# run the image on port 9090
+docker run -p 9998:8000 --name $container_name -d -v "${projectPath}/mkdocs":/mkdocs hxhroniegss/mkdocs
+
+source ./ops/docker/bin/is_site_ready
+# Check if site is ready meaning it shows Serving logs
+isSiteReady $container_name 'Serving'
+
+echo "
+	  =======================================
+	   Open http://localhost:9998 on browser
+	  =======================================
+	     Run bin/build to aid customization
+	  =======================================
+	 "

@@ -1,0 +1,12 @@
+site_name: Bizmates Microservices Project Documentor
+copyright: 'copyright © Bizmates, All rights reserved.'
+theme:
+  name: 'material'
+  palette:
+    primary: indigo
+    accent: indigo
+pages:
+    - Introduction: README.md
+    - JobSearch Microservices:
+      - Architecture: architecture/README.md
+      - CI/CD: ci_cd/README.md

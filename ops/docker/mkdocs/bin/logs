@@ -1,0 +1,11 @@
+#! /bin/bash
+
+container_name='biz_mkdocs'
+
+if docker ps -f name=$container_name | grep 'mkdocs' -o;
+then
+	# Show container logs
+	docker logs --tail -f $container_name
+else
+	echo "Mkdocs container not running!"
+fi
