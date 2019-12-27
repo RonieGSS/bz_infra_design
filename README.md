@@ -1,1 +1,1 @@
-# Bizmates Microservices Infrastructure Design
+# Bizmates Microservices Architecture
