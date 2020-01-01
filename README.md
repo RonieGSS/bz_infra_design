@@ -1,4 +1,4 @@
-# Bizmates Microservices Architecture
+# Bizmates Infrastructure/Microservices Architecture
 
 ### Running mkdocs application
 
