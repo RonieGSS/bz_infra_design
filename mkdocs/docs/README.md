@@ -1,5 +1,5 @@
 
-# Job Search System
+# JobSearch Matching System
 
 > A microservices system dedicated for searching, applying to, and posting jobs
 
