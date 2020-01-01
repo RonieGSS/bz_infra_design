@@ -1,6 +1,8 @@
 
 # Job Search System
 
+> A microservices system used for searching, applying to, and posting jobs
+
 ### Services
 
 * Service Introduction Feature

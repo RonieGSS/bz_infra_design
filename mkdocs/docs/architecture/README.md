@@ -51,3 +51,20 @@ Bastion host(jump server), elastic load balancer, and nat gateway will be in pub
 
 * **Bastion Host**
 > This will be used to access kubernetes nodes, redis, and database. The access to bastion host is limited to port 22 only and no outbound access is necessary. t2.nano is suitable for bastion server since ssh tunneling will not consume much resource
+
+### Application Layer Architecture
+
+<a href="../img/application_layer.png" target="_blank">
+  <img src="../img/application_layer.png" alt="Application Layer Architecture">
+</a>
+
+<p> Based from the diagram above, there will be five main services:</p>
+<ol>
+	<li>Job Seeker Service (JS) - mainly used by job seekers to search and apply (through messaging) for jobs</li>
+	<li>Recruitment Company Service (RC) - mainly used by recruitment companies to post jobs and contact job seekers</li>
+	<li>Internal Service Operations (IO) - mainly used by users (job seekers and recruitment companies) to contact system operators</li>
+	<li>JS to RC API - used to connect Job Seeker Service to Recruitment Company Service</li>
+	<li>IO to JS and RC API - used to connect Job Seeker Service and Recruitment Company Service to Internal Service Operations</li>
+</ol>
+
+<p>JS, RC, and IO will have their own databases to avoid migration conflicts, design complexity, and other future technical debts</p>
