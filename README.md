@@ -15,7 +15,7 @@ $ bin/mcc
 3. Select `Mkdocs run` and click *Enter*
 4. Wait for the following to show on your terminal:
 ```
-      =======================================
+	  =======================================
 	   Open http://localhost:9998 on browser
 	  =======================================
 	     Run bin/build to aid customization
