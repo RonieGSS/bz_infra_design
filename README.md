@@ -6,6 +6,7 @@
 * Linux OS and Terminal
 * Installed Docker Client and Server
 
+**Steps**
 1. Clone the repository [https://github.com/RonieGSS/bz_infra_design.git](https://github.com/RonieGSS/bz_infra_design.git)
 2. Run the following commands on your terminal:
 ```
