@@ -1,4 +1,4 @@
-site_name: Bizmates Microservices Project Documentor
+site_name: Bizmates Job Search System Documentor
 copyright: 'copyright © Bizmates, All rights reserved.'
 theme:
   name: 'material'
@@ -10,3 +10,4 @@ pages:
     - JobSearch Microservices:
       - Architecture: architecture/README.md
       - CI/CD: ci_cd/README.md
+    - Additional Questions: additional_questions/README.md
