@@ -67,4 +67,8 @@ Bastion host(jump server), elastic load balancer, and nat gateway will be in pub
 	<li>IO to JS and RC API - used to connect Job Seeker Service and Recruitment Company Service to Internal Service Operations</li>
 </ol>
 
-<p>JS, RC, and IO will have their own databases to avoid migration conflicts, design complexity, and other future technical debts</p>
+<p>The matching services JS, RC, and IO will have their own databases to avoid migration conflicts, design complexity, and other future technical debts especially regarding data integrity.</p>
+<p>Each service will have its own deployment -> replicaset -> pod used for docker container deployment in which autoscaling is configured.</p> 
+<p>Secret files and variables like api keys can be added in Kubernetes secrets and/or even hashicorp vault; while configurations like php.ini will be placed in Kubernetes configmap to separate the application to configuration as per Twelve Factor App.</p>
+<p>Each kubernetes node or AWS ec2 will be autoscaled using kubernetes cluster autoscaler.</p>
+<p>Important logs inside the docker containers should be viewed from kubernetes logs via stdout and stderr configuration also as per Twelve Factor App.</p>
