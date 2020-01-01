@@ -23,3 +23,5 @@ $ bin/mcc
 	  =======================================
 ```
 5. Open **http://localhost:9998** on your browser
+
+<footer>@Copyright Bizmates</footer>
